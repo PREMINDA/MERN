@@ -9,12 +9,12 @@ const Header = () => {
           <Navbar.Brand href="#home">MERNSHOP</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
+            <Nav className="justify-content-end" style={{ width: "100%" }}>
               <Nav.Link href="/cart">
-                <i className="fas fa-shopping-cart"></i>Home
+                <i className="fas fa-shopping-cart pr-5"></i> Home
               </Nav.Link>
               <Nav.Link href="/login">
-                <i className="fas fa-user"></i>Sign In
+                <i className="fas fa-user"></i> Sign In
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
