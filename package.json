@@ -1,0 +1,23 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "description": "Mern Shoping app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PREMINDA/MERN.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PREMINDA/MERN/issues"
+  },
+  "homepage": "https://github.com/PREMINDA/MERN#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
