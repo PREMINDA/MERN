@@ -13,7 +13,7 @@ const ProductScreen = ({ match }) => {
       setProduct(data);
     };
     fetchproduct();
-  }, []);
+  }, [match]);
 
   return (
     <>
