@@ -1,7 +1,7 @@
 const products = [
   {
     _id: "1",
-    name: "Airpods Wireless Bluetooth Headphones",
+    name: "Airpods Wireless Bluetooth",
     image: "/images/airpods.jpg",
     description:
       "Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working",
@@ -40,7 +40,7 @@ const products = [
   },
   {
     _id: "4",
-    name: "Sony Playstation 4 Pro White Version",
+    name: "Sony Playstation 4 Pro White",
     image: "/images/playstation.jpg",
     description:
       "The ultimate home entertainment center starts with PlayStation. Whether you are into gaming, HD movies, television, music",
@@ -66,7 +66,7 @@ const products = [
   },
   {
     _id: "6",
-    name: "Amazon Echo Dot 3rd Generation",
+    name: "Amazon Echo Dot ",
     image: "/images/alexa.jpg",
     description:
       "Meet Echo Dot - Our most popular smart speaker with a fabric design. It is our most compact smart speaker that fits perfectly into small space",
@@ -79,4 +79,4 @@ const products = [
   },
 ];
 
-module.exports = products;
+export default products;
