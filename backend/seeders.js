@@ -18,7 +18,7 @@ connectDB();
 const importData = async () => {
   try {
     await Order.deleteMany();
-    await users.deleteMany();
+    await User.deleteMany();
     await Product.deleteMany();
 
     const createUsers = await User.insertMany(users);
@@ -41,7 +41,7 @@ const importData = async () => {
 const destroyData = async () => {
   try {
     await Order.deleteMany();
-    await users.deleteMany();
+    await User.deleteMany();
     await Product.deleteMany();
 
     console.log("Data Destroy ... ".green.bold);

@@ -10,9 +10,8 @@
     "server": "nodemon backend/server",
     "client": "npm start --prefix frontend",
     "dev": "\"npm run server\"\"npm run client\"",
-    "data:import":"node backend/seeders",
-    "data:destroy":"node backend/seeders"
-
+    "data:import": "node backend/seeders",
+    "data:destroy": "node backend/seeders -d"
   },
   "repository": {
     "type": "git",
@@ -29,6 +28,7 @@
     "colors": "^1.4.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
     "mongoose": "^5.12.13",
     "validator": "^13.6.0"
   },
