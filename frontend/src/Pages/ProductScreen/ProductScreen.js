@@ -22,7 +22,7 @@ const ProductScreen = ({ match }) => {
   useEffect(() => {
     dispatch(listProductsDetail(match.params.id));
   }, [dispatch, match]);
-
+  const inStockArray = [...Array(product.countInStock).keys()];
   return (
     <>
       <Link
@@ -76,7 +76,17 @@ const ProductScreen = ({ match }) => {
                 <ListGroup.Item>
                   <Col>Qty</Col>
                   <Col>
-                    <Form.Control value={qty} as="select"></Form.Control>
+                    <Form.Control
+                      value={qty}
+                      as="select"
+                      onChange={(e) => setQty(e.target.value)}
+                    >
+                      {inStockArray.map((x) => (
+                        <option key={x + 1} value={x + 1}>
+                          {x + 1}
+                        </option>
+                      ))}
+                    </Form.Control>
                   </Col>
                 </ListGroup.Item>
               )}
