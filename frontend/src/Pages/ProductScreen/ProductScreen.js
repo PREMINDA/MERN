@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  Image,
+  ListGroup,
+  Card,
+  Button,
+  Form,
+} from "react-bootstrap";
 import Rating from "../../components/Rating/Rating";
+import { listProductsDetail } from "../../actions/productActions";
 
 const ProductScreen = ({ match }) => {
-  const [product, setProduct] = useState([]);
+  const [qty, setQty] = useState(0);
+  const dispatch = useDispatch();
+  const productDetail = useSelector((state) => state.productDetail);
 
+  const { loading, error, product } = productDetail;
   useEffect(() => {
-    const fetchproduct = async () => {
-      const { data } = await axios.get(`/api/products/${match.params.id}`);
-      setProduct(data);
-    };
-    fetchproduct();
-  }, [match]);
+    dispatch(listProductsDetail(match.params.id));
+  }, [dispatch, match]);
 
   return (
     <>
@@ -64,6 +72,14 @@ const ProductScreen = ({ match }) => {
                   </Col>
                 </Row>
               </ListGroup.Item>
+              {product.countInStock > 0 && (
+                <ListGroup.Item>
+                  <Col>Qty</Col>
+                  <Col>
+                    <Form.Control value={qty} as="select"></Form.Control>
+                  </Col>
+                </ListGroup.Item>
+              )}
               <ListGroup.Item style={{ margin: "auto" }}>
                 <Button
                   className="btn-block"

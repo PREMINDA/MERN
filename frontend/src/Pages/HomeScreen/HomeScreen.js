@@ -5,7 +5,6 @@ import Product from "./../../components/Product/Product";
 import { listProducts } from "../../actions/productActions";
 import Message from "../../components/message/Message";
 import Loader from "../../components/loader/Loader";
-import axios from "axios";
 
 function HomeScreen(props) {
   const dispatch = useDispatch();
