@@ -16,6 +16,7 @@ function HomeScreen(props) {
   }, []);
   return (
     <>
+      <h1>Latest Product</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -29,7 +30,6 @@ function HomeScreen(props) {
           ))}
         </Row>
       )}
-      <h1>Latest Product</h1>
     </>
   );
 }

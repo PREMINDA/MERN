@@ -14,7 +14,7 @@ import Rating from "../../components/Rating/Rating";
 import { listProductsDetail } from "../../actions/productActions";
 
 const ProductScreen = ({ history, match }) => {
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
   const productDetail = useSelector((state) => state.productDetail);
 
@@ -22,10 +22,7 @@ const ProductScreen = ({ history, match }) => {
   useEffect(() => {
     dispatch(listProductsDetail(match.params.id));
   }, [dispatch, match]);
-  const inStockArray = [
-    ...Array(product.countInStock).keys(),
-    product.countInStock,
-  ];
+  const inStockArray = [...Array(product.countInStock).keys()];
 
   const cartHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
@@ -90,8 +87,8 @@ const ProductScreen = ({ history, match }) => {
                         onChange={(e) => setQty(e.target.value)}
                       >
                         {inStockArray.map((x) => (
-                          <option key={x} value={x}>
-                            {x}
+                          <option key={x + 1} value={x + 1}>
+                            {x + 1}
                           </option>
                         ))}
                       </Form.Control>
