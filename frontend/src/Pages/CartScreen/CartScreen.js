@@ -12,7 +12,7 @@ import {
   Button,
   Card,
 } from "react-bootstrap";
-import { addToCart } from "../../actions/cartAction";
+import { addToCart, removeItemFromCart } from "../../actions/cartAction";
 import Message from "../../components/message/Message";
 import { ItemCount, ItemPrice } from "./CartsecreeUtil";
 
@@ -30,8 +30,12 @@ const CartScreen = ({ location, match, history }) => {
     }
   }, [productId, qty, dispatch]);
 
-  const removeFromCart = () => {
-    console.log("remove");
+  const removeFromCart = (product) => {
+    dispatch(removeItemFromCart(product));
+  };
+
+  const chechoutHandler = () => {
+    console.log("chechoutHandler");
   };
 
   return (
@@ -94,6 +98,16 @@ const CartScreen = ({ location, match, history }) => {
             <ListGroup.Item>
               <h3>SubTotal ({ItemCount(cartItems)}) items</h3>$
               {ItemPrice(cartItems)}
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <Button
+                type="button"
+                className="btn-block"
+                disabled={cartItems.length === 0}
+                onClick={chechoutHandler}
+              >
+                Proceed To Checkout
+              </Button>
             </ListGroup.Item>
           </ListGroup>
         </Card>
