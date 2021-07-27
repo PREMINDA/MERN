@@ -87,7 +87,11 @@ const ProductScreen = ({ history, match }) => {
                         onChange={(e) => setQty(e.target.value)}
                       >
                         {inStockArray.map((x) => (
-                          <option key={x + 1} value={x + 1}>
+                          <option
+                            style={{ background: "blue" }}
+                            key={x + 1}
+                            value={x + 1}
+                          >
                             {x + 1}
                           </option>
                         ))}
