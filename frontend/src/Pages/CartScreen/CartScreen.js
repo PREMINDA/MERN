@@ -35,7 +35,7 @@ const CartScreen = ({ location, match, history }) => {
   };
 
   const chechoutHandler = () => {
-    console.log("chechoutHandler");
+    history.push("/login?redirect=shipping");
   };
 
   return (
