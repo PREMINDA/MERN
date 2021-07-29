@@ -2,19 +2,22 @@ import express from "express";
 import dotenv from "dotenv";
 import colors from "colors";
 import { errorHandler } from "./Middleware/errorMiddleware.js";
-import router from "./routes/productroutes.js";
+import productRoutes from "./routes/productroutes.js";
+import userRoutes from "./routes/userRoutes.js";
 import connectDB from "./config/db.js";
 
 const app = express();
 
 dotenv.config();
 connectDB();
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("API is runing");
 });
 
-app.use("/api/products", router);
+app.use("/api/products", productRoutes);
+app.use("/api/users", userRoutes);
 
 app.use(errorHandler);
 

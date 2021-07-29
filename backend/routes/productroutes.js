@@ -6,10 +6,10 @@ import {
 } from "../controllers/productController.js";
 import Product from "../models/productModel.js";
 
-const router = express.Router();
+const productRoutes = express.Router();
 
-router.route("/").get(getProduct);
+productRoutes.route("/").get(getProduct);
 
-router.route("/:id").get(getProductById);
+productRoutes.route("/:id").get(getProductById);
 
-export default router;
+export default productRoutes;
