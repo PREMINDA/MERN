@@ -1,5 +1,6 @@
 import asyncHandler from "express-async-handler";
 import bcrypt from "bcryptjs";
+import generateToken from "../Util/generateToken.js";
 
 import User from "../models/userModel.js";
 
@@ -19,7 +20,7 @@ const authUser = asyncHandler(async (req, res) => {
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
-      token: null,
+      token: generateToken(user._id),
     });
   } else {
     res.status(401);
@@ -27,4 +28,10 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-export { authUser };
+const getUserProfile = asyncHandler(async (req, res) => {
+  const user = "asdasdasd";
+
+  res.send(user);
+});
+
+export { authUser, getUserProfile };
