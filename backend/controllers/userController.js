@@ -29,9 +29,7 @@ const authUser = asyncHandler(async (req, res) => {
 });
 
 const getUserProfile = asyncHandler(async (req, res) => {
-  const user = "asdasdasd";
-
-  res.send(user);
+  res.send(req.user);
 });
 
 export { authUser, getUserProfile };
